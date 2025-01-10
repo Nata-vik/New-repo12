@@ -1,4 +1,5 @@
 package ru.netology.stats;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -7,17 +8,17 @@ public class StatsServiceTest {
 
 
     @Test
-    public void totalSales () {
+    public void totalSales() {
         StatsService service = new StatsService();
 
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int actual = (int) service.totalSales(sale);
-        int expected = 180;
+        long expected = 180;
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void saleMiddleMonth () {
+    public void saleMiddleMonth() {
         StatsService service = new StatsService();
 
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -27,7 +28,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void minSales () {
+    public void minSales() {
         StatsService service = new StatsService();
 
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -37,7 +38,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void maxSales () {
+    public void maxSales() {
         StatsService service = new StatsService();
 
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -47,7 +48,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void monthUnderMiddle () {
+    public void monthUnderMiddle() {
         StatsService service = new StatsService();
 
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
@@ -57,7 +58,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void monthOverMiddle () {
+    public void monthOverMiddle() {
         StatsService service = new StatsService();
 
         int[] sale = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};

@@ -3,18 +3,18 @@ package ru.netology.stats;
 
 public class StatsService {
 
-   public int totalSales(int[] sale) {
-       int sum = 0;
-       for (int buy : sale) {    // вычисляем сумму всех продаж
-           sum = sum + buy;
-       }
-       return sum;
+    public long totalSales(int[] sale) {
+        long sum = 0;
+        for (long buy : sale) {    // вычисляем сумму всех продаж
+            sum = sum + buy;
+        }
+        return sum;
 
-   }
+    }
 
     public double saleMiddleMonth(int[] sale) {
         double sum = totalSales(sale);
-        double middleMonth = sum / 12;   // вычисляем ссреднюю сумму продаж в месяц
+        double middleMonth = sum / 12;   // вычисляем среднюю сумму продаж в месяц
 
         return middleMonth;
 
@@ -25,7 +25,7 @@ public class StatsService {
         int minMonth = 0;
 
         for (int i = 0; i < sale.length; i++) {
-            if (sale[i] <= sale[minMonth]) {     // номер месяца, в котором был пик продаж
+            if (sale[i] <= sale[minMonth]) {     // номер месяца, в котором был минимум продаж
                 minMonth = i;
             }
         }
@@ -38,12 +38,12 @@ public class StatsService {
         int maxMonth = 0;
 
         for (int i = 0; i < sale.length; i++) {
-            if (sale[i] >= sale[maxMonth]) {     // номер месяца, в котором был минимум продаж
+            if (sale[i] >= sale[maxMonth]) {     // номер месяца, в котором был пик продаж
                 maxMonth = i;
             }
         }
 
-            return maxMonth + 1;
+        return maxMonth + 1;
     }
 
 
@@ -71,8 +71,6 @@ public class StatsService {
         }
         return numberOverMiddle;
     }
-
-
 
 
 }
