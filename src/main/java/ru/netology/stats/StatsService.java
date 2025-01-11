@@ -3,7 +3,7 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public long totalSales(int[] sale) {
+    public long totalSales(long[] sale) {
         long sum = 0;
         for (long buy : sale) {    // вычисляем сумму всех продаж
             sum = sum + buy;
@@ -12,16 +12,14 @@ public class StatsService {
 
     }
 
-    public double saleMiddleMonth(int[] sale) {
-        double sum = totalSales(sale);
-        double middleMonth = sum / 12;   // вычисляем среднюю сумму продаж в месяц
+    public long saleMiddleMonth(long[] sale) {
 
-        return middleMonth;
+        return totalSales(sale) / 12;    // вычисляем среднюю сумму продаж в месяц
 
     }
 
 
-    public int minSales(int[] sale) {
+    public int minSales(long[] sale) {
         int minMonth = 0;
 
         for (int i = 0; i < sale.length; i++) {
@@ -34,7 +32,7 @@ public class StatsService {
     }
 
 
-    public int maxSales(int[] sale) {
+    public int maxSales(long[] sale) {
         int maxMonth = 0;
 
         for (int i = 0; i < sale.length; i++) {
@@ -47,8 +45,8 @@ public class StatsService {
     }
 
 
-    public int monthUnderMiddle(int[] sale) {
-        int middleSum = (int) saleMiddleMonth(sale);
+    public int monthUnderMiddle(long[] sale) {
+        long middleSum = saleMiddleMonth(sale);
         int numberUnderMiddle = 0;
 
         for (int i = 0; i < sale.length; i++) {   // количество месяцев, в которых продажи были ниже среднего
@@ -56,12 +54,13 @@ public class StatsService {
                 numberUnderMiddle = numberUnderMiddle + 1;
             }
         }
+
         return numberUnderMiddle;
     }
 
 
-    public int monthOverMiddle(int[] sale) {
-        int middleSum = (int) saleMiddleMonth(sale);
+    public int monthOverMiddle(long[] sale) {
+        long middleSum = saleMiddleMonth(sale);
         int numberOverMiddle = 0;
 
         for (int i = 0; i < sale.length; i++) {     // количество месяцев, в которых продажи были выше среднего
@@ -69,6 +68,7 @@ public class StatsService {
                 numberOverMiddle = numberOverMiddle + 1;
             }
         }
+
         return numberOverMiddle;
     }
 
